@@ -24,6 +24,4 @@ else()
     find_dependency(ZLIB REQUIRED)
 endif()
 
-set_target_properties(QuaZip::QuaZip PROPERTIES IMPORTED_GLOBAL TRUE)
-
 check_required_components(@QUAZIP_PACKAGE_NAME@)

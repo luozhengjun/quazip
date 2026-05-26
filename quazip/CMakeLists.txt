@@ -78,6 +78,9 @@ if(BUILD_SHARED_LIBS)
 else()
 	target_compile_definitions(${QUAZIP_LIB_TARGET_NAME} PUBLIC QUAZIP_STATIC) # suppress dllimport
 endif()
+if(QUAZIP_ENABLE_QTEXTCODEC)
+	target_compile_definitions(${QUAZIP_LIB_TARGET_NAME} PUBLIC QUAZIP_CAN_USE_QTEXTCODEC)
+endif()
 target_link_directories(${QUAZIP_LIB_TARGET_NAME} PUBLIC ${QUAZIP_LBD})
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
